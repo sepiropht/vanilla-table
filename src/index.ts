@@ -6,19 +6,33 @@ const thead = document.createElement('thead')
 const tr = document.createElement('tr')
 const tbody = document.createElement('tbody')
 
-data.forEach((element) => {
-  Object.keys(element).forEach((key) => {
-    const th = document.createElement('th')
-    th.textContent = key
-    tr.appendChild(th)
-  })
+const keys = {
+  Nom: 'name1',
+  Prénom: 'name2',
+  Âge: 'age',
+  'Couleur des yeux': 'eyeColor',
+  Email: 'email',
+  Entreprise: 'company',
+  Téléphone: 'phone',
+}
+
+Object.keys(keys).forEach((key) => {
+  const th = document.createElement('th')
+  th.textContent = key
+  tr.appendChild(th)
 })
 
 data.forEach((element) => {
   const trbody = document.createElement('tr')
-  Object.values(element).forEach((value) => {
+  Object.values(keys).forEach((key) => {
     const td = document.createElement('td')
-    td.textContent = value
+    if (key === 'name1') {
+      td.textContent = element['name']['first']
+    } else if (key === 'name2') {
+      td.textContent = element['name']['last']
+    } else {
+      td.textContent = element[key]
+    }
     trbody.appendChild(td)
   })
   tbody.appendChild(trbody)
