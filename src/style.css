@@ -1,3 +1,17 @@
-h1 {
-  background-color: red;
+body {
+  background-color: rgb(230, 238, 238);
+}
+table {
+  background-color: white;
+  margin: 0 auto;
+  box-shadow: 5px 4px 4px black;
+}
+thead {
+  background-color: rgb(41, 195, 188);
+}
+td,
+th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: center;
 }
