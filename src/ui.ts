@@ -6,7 +6,7 @@ export function render(data: Data, start: number = 0): void {
   const tr = document.createElement('tr')
   const tbody = document.createElement('tbody')
   const th = document.createElement('th')
-  const body = document.querySelector('body')
+  const body = document.querySelector('.table')
   if (document.querySelector('table')) {
     body.removeChild(document.querySelector('table'))
   }
@@ -34,5 +34,5 @@ export function render(data: Data, start: number = 0): void {
   thead.appendChild(tr)
   table.appendChild(thead)
   table.appendChild(tbody)
-  document.querySelector('body').appendChild(table)
+  document.querySelector('.table').appendChild(table)
 }

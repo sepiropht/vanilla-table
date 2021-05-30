@@ -3,7 +3,6 @@ body {
 }
 table {
   background-color: white;
-  margin-top: 5px;
   margin: 0 auto;
   box-shadow: 5px 4px 4px black;
 }
@@ -30,5 +29,6 @@ th {
 }
 
 .control {
+  margin-top: 10px;
   text-align: center;
 }

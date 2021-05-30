@@ -38,7 +38,10 @@ for (let [query, value] of entries) {
 }
 const prev: HTMLButtonElement = document.querySelector('.prev')
 const next: HTMLButtonElement = document.querySelector('.next')
-
+if (data.length < 11) {
+  next.disabled = true
+  prev.disabled = true
+}
 let stateSlider = 0
 
 next.addEventListener('click', () => {
@@ -63,7 +66,6 @@ prev.addEventListener('click', () => {
   stateSlider--
   const start = stateSlider === 0 ? 0 : 10 * stateSlider
   const end = start + 11
-  console.log(start, end)
   render(data.slice(start, end), start)
 
   if (stateSlider === 0) {
