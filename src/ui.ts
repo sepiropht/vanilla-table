@@ -1,6 +1,6 @@
-import { Data, keys } from './models.ts'
+import { Data, keys } from './models'
 
-export function render(data: Data) {
+export function render(data: Data): void {
   const table = document.createElement('table')
   const thead = document.createElement('thead')
   const tr = document.createElement('tr')

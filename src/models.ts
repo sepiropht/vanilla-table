@@ -1,4 +1,4 @@
-export type Data = {
+export type Data = Array<{
   firstName: string
   lastName: string
   eyeColor: string
@@ -6,11 +6,11 @@ export type Data = {
   phone: string
   email: string
   company: string
-}
+}>
 
 const eyeColors = ['blue', 'brown', 'green']
 
-export type EyeColor = typeof eyeColors[string]
+export type EyeColor = typeof eyeColors
 
 export const isEyeColor = (x: any) => eyeColors.includes(x)
 

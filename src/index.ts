@@ -8,13 +8,13 @@ import {
   EyeColor,
   filterByAge,
   getRange,
-} from './models.ts'
+} from './models'
 
 let data: Data = json.map(({ name, eyeColor, age, email, company, phone }) => ({
   firstName: name.first.toLowerCase(),
   lastName: name.last.toLowerCase(),
   eyeColor,
-  age: parseInt(age),
+  age: parseInt(age as any),
   phone,
   company: company.toLowerCase(),
   email,
@@ -24,7 +24,7 @@ const entries = parseUrl(window.location.search)
 
 for (let [query, value] of entries) {
   if (query === 'age') {
-    const range = getRange(value)
+    const range = getRange(parseInt(value))
     data = filterByAge(data, range)
     continue
   } else if (query === 'eyeColor' && !isEyeColor(value)) {

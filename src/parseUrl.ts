@@ -1,5 +1,19 @@
-export default (url: string) => {
+import { keys } from './models'
+
+export default (url: string): Array<[string, string]> => {
   const urlParams = new URLSearchParams(url)
-  return urlParams.entries()
+  return Array.from(urlParams.entries())
+    .filter(isBadKeys)
+    .filter(isDuplicatedKey)
 }
-const removeDuplicateKey = (url) => {}
+
+const isBadKeys = ([key, _]: [string, string]): boolean =>
+  Object.values(keys).includes(key)
+
+const alreadyFind = []
+const isDuplicatedKey = ([key, _]: [string, string]): boolean => {
+  if (!alreadyFind.includes(key)) {
+    alreadyFind.push(key)
+    return true
+  }
+}
