@@ -3,9 +3,9 @@ export type Data = Array<{
   lastName: string
   eyeColor: string
   age: number
-  phone: string
-  email: string
-  company: string
+  phone?: string
+  email?: string
+  company?: string
 }>
 
 const eyeColors = ['blue', 'brown', 'green']
@@ -23,11 +23,24 @@ const ageRanges: Array<Range> = [
   [36, 41],
 ]
 
-export const getRange = (age: number): Range =>
-  ageRanges.find(([start, end]) => age >= start && age <= end)
+const keyRanges = {
+  '[20-25]': [20, 25],
+  '[26-30]': [26, 30],
+  '[31-35]': [31, 35],
+  '[36-41]': [36, 41],
+}
+
+export const getRange = (keyRange: string): Range => {
+  if (!keyRanges[keyRange]) {
+    throw Error('Wrong range')
+  }
+  return keyRanges[keyRange]
+}
 
 export const filterByAge = (collection: Data, range: Range): Data =>
-  collection.filter(({ age }) => age >= range[0] && age <= range[1])
+  range
+    ? collection.filter(({ age }) => age >= range[0] && age <= range[1])
+    : collection
 
 export const keys = {
   Nom: 'lastName',
