@@ -1,4 +1,4 @@
-import { Data, keys } from './models'
+import { Data, keys } from '../models'
 
 export function render(data: Data, start: number = 0): void {
   const table = document.createElement('table')

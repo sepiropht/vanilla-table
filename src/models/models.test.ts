@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { Data, filterByAge, getRange } from './models'
+import { Data, filterByAge, getRange } from '.'
 
 const data: Data = [
   {

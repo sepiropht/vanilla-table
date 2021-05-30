@@ -1,6 +1,6 @@
 import json from './datas.json'
-import { render } from './ui'
-import parseUrl from './parseUrl'
+import { render } from './ui/render'
+import parseUrl from './utils/parseUrl'
 import { Data, isEyeColor, filterByAge, getRange } from './models'
 
 let data: Data = json.map(({ name, eyeColor, age, email, company, phone }) => ({

@@ -1,4 +1,4 @@
-import { keys } from './models'
+import { keys } from '../models'
 
 export default (url: string): Array<[string, string]> => {
   const urlParams = new URLSearchParams(url)
