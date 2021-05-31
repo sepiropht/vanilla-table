@@ -16,13 +16,6 @@ export const isEyeColor = (x: any) => eyeColors.includes(x)
 
 export type Range = [number, number]
 
-const ageRanges: Array<Range> = [
-  [20, 25],
-  [26, 30],
-  [31, 35],
-  [36, 41],
-]
-
 const keyRanges = {
   '[20-25]': [20, 25],
   '[26-30]': [26, 30],
