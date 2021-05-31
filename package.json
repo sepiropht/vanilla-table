@@ -1,7 +1,6 @@
 {
   "name": "test-recrutement",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",
@@ -13,6 +12,6 @@
   },
   "scripts": {
     "start": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html --dist-dir ./public"
   }
 }
