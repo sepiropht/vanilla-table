@@ -16,7 +16,7 @@ let data: Data = json.map(({ name, eyeColor, age, email, company, phone }) => ({
 
 const entries = parseUrl(window.location.search)
 
-for (let [query, value] of entries) {
+for (const [query, value] of entries) {
   if (query === 'age') {
     let range
     try {
@@ -40,4 +40,4 @@ for (let [query, value] of entries) {
 
 pagination(data)
 
-render(data.slice(0, 10))
+render(data.slice(0, 11))

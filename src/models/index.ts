@@ -12,7 +12,7 @@ const eyeColors = ['blue', 'brown', 'green']
 
 export type EyeColor = typeof eyeColors
 
-export const isEyeColor = (x: any) => eyeColors.includes(x)
+export const isEyeColor = (x: string): boolean => eyeColors.includes(x)
 
 export type Range = [number, number]
 
