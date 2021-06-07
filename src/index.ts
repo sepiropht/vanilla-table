@@ -1,8 +1,7 @@
 import json from './datas.json'
-import { render } from './ui/render'
+import { render, pagination } from './ui'
 import parseUrl from './utils/parseUrl'
 import { Data, isEyeColor, filterByAge, getRange } from './models'
-import { pagination } from './ui/pagination'
 
 let data: Data = json.map(({ name, eyeColor, age, email, company, phone }) => ({
   firstName: name.first.toLowerCase(),
